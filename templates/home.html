@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2017 by YifengGuo (http://jsbin.com/xixoro/5/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>StockForecast</title>
+  <style id="jsbin-css">
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    background: #434343;
+    color: #FFF;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-size: 0.9em;
+  }
+
+  .top-header {
+    align-items: center;
+    background: #DF574B;
+    box-shadow: 0 2px 10px #333333;
+    display: flex; /* mobile friendly */
+    height: 60px;
+    position:fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;  
+  }
+
+  .navigator a {
+    color: #F9F9F9;
+    font-weight: 400;
+    margin-left: 20px;
+    text-decoration: none;
+  }
+
+  .right-bar {
+    color: #F9F9F9;
+    font-weight: 400;
+    margin-left: 180px;
+    text-decoration: none;
+  }
+
+  .right-bar .login,.register,.logout {
+    color: #F9F9F9;
+    text-decoration: none;
+    right:0;
+    margin-left: 10px;
+    width:80px;
+    height:20px;
+  }
+  .register {
+    //align-items:center;
+    //float:right;
+    position:absolute;
+    margin-right:0;
+    top:22px;
+  }
+
+  .logout{
+    display: none;
+    //align-items:center;
+    top: 22px;
+    position:absolute;
+    margin-right: 60px;
+  }
+
+  .login {
+    //align-items:center;
+    top: 22px;
+    position:absolute;
+    margin-right: 60px;  
+  }
+
+  .title {
+    margin: 200px auto;
+    text-align:center;
+    color: #FBAF41;
+    width:300px;
+    font-size:2em;
+    margin-bottom:0;
+  }
+
+  .search {
+    text-align:center;
+    color: #000000;
+    font-size:2em;
+  }
+
+  .search-field {
+    width:300px;
+    height: 30px;
+  }
+
+  .search-btn {
+    width:60px;
+  }
+
+  .intro {
+    margin-top:200px;
+    text-align: center;
+  }
+
+</style>
+{% if change %}
+  <style id="jsbin-css">
+  .logout{
+    display: inline;
+    //align-items:center;
+    top: 22px;
+    position:absolute;
+    margin-right: 60px;
+  }
+
+  .login {
+    display: none;
+    //align-items:center;
+    top: 22px;
+    position:absolute;
+    margin-right: 60px;
+  }
+  </style>
+{% endif %}
+</head>
+<body>
+  <header class="top-header">
+
+    <nav class="navigator">
+      <a href="http://127.0.0.1:5000/home" class="main-btn">Home</a>
+      <a href="" class="main-btn">Myprofile</a>
+      <a href="" class="main-btn">News</a>
+      <a href="" class="main-btn">FAQ</a>
+    </nav>
+
+    <div class="right-bar">
+      <a href="http://127.0.0.1:5000/client/login" class="login">Login</a>
+      <a href="http://127.0.0.1:5000/logout" class="logout">Log out</a>
+      <a href="http://127.0.0.1:5000/client/register" class="register">Register</a>
+    </div>
+  </header>
+  
+  <div>
+    <p class="title">Search the Stock</p>
+  </div>
+  
+  <form action="" method="post" class="search">
+    <div>
+      <input name="stock" type="text" class="search-field"/>
+    </div><!--Search Bar-->
+    <div>
+      <input name="" value="Search" type="submit" class="search-btn"/>
+    </div><!--Search Button-->
+  </form>
+  
+  <footer class="footer">
+    <div class="intro">
+    <p>Software Engineering Web Application</p></br>
+    <p>Group 3 presents</p>
+    </div>
+  </footer>
+</body>
+</html>

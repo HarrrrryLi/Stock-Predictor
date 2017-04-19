@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2017 by YifengGuo (http://jsbin.com/luzewam/27/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <title>stockselect</title>
+<style id="jsbin-css">
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #434343;
+  color: #FFF;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: 0.9em;
+}
+
+
+.top-header {
+  align-items: center;
+  background: #DF574B;
+  box-shadow: 0 2px 10px #333333;
+  display: flex; /* mobile friendly */
+  height: 60px;
+  position:fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  
+}
+
+.navigator a {
+  color: #F9F9F9;
+  font-weight: 400;
+  margin-left: 20px;
+  text-decoration: none;
+}
+
+.time-range {
+  line-height:30px;
+  margin-top: 100px;
+  width:500px;
+  //text-align:left;
+  //padding-left:10px;
+  color: #FBAF41;
+  font-size:15px;
+}
+
+.stock-name {
+  //width:300px;
+  float: left;
+  margin-left:60px;
+}
+
+.select-bar {
+  border: solid 1px #000;
+  width:130px;
+  margin-left:15px;
+  margin-right:20px;
+  color: #d34032
+}
+
+.option {
+  
+}
+
+.fav-link {
+  color:#FFFFFF;
+}
+
+.fav-link:hover {
+  color:red;
+}
+
+.search-bar {
+  margin-top:-22px;
+  text-align:right;
+  margin-right:20px;
+}
+
+.search-icon {
+  margin-right:80px;
+  margin-top:-18px;
+  float:right;
+  color:#ffffff;
+  cursor:pointer;
+}
+
+.search-icon:hover {
+  color:#0ea6f2;
+}
+
+.search-field {
+  margin-right:80px;
+  color:#0ea6f2;
+}
+
+.stock-chart {
+  margin-top:30px;
+  margin-left:60px;
+  width:650px;
+  height:350px;
+  border:solid 1px;
+}
+
+.history {
+  margin-right:80px;
+}
+
+.previous-view {
+  float:right;
+  margin-top:-375px;
+  margin-right:36px;
+  border:solid 1px #f2995e;
+  border-radius: 15%;
+  color: #1fd6f2;
+  font-weight:bold;
+}
+
+.scan-history-list {
+  border:solid 1px #FFFFFF;
+  background: #f4edee;
+  list-style:none;
+  float:right;
+  text-align:center;
+  margin-top:-350px;
+  margin-right:20px;
+  width:140px;
+  color:#0c58f2;
+  font-weight:bold;
+}
+
+.algorithm {
+  margin-top:30px;
+  margin-left:60px;
+  color: #27e589;
+  font-size:1.2em;
+  line-height:1.8;
+  font-weight:bold;
+}
+
+.footer {
+  margin-top:100px;
+  text-align: center;
+  margin-bottom:10px;
+}
+
+</style>
+</head>
+<body>
+  
+  <header class="top-header">
+    <nav class="navigator">
+      <a href="http://127.0.0.1:5000/home" class="main-btn">Home</a>
+      <a href="" class="main-btn">Myprofile</a>
+      <a href="" class="main-btn">News</a>
+      <a href="" class="main-btn">FAQ</a>
+    </nav>
+  </header>
+  
+  <div class="time-range">
+    <p class="stock-name">Stock Name
+      <select class="select-bar">
+        <option class="option">Adjust time range</option>
+      </select>
+      <div class="fav-link">
+        <i class="fa fa-heart"></i>
+      </div>     
+    </p>
+  </div>
+  
+  <div class="search-bar">
+    <input name="" type="text" class="search-field" value="search for stock..."/>
+  </div>
+  
+  <a href="" class="search-icon">
+    <i class="fa fa-search" aria-hidden="true"></i>
+  </a>
+  
+  <!-- stock trend chart -->
+  <div class="stock-chart">
+    <img src="{{ url_for('figure') }}" alt="stock curve" style="width: 650px; height: 350px; border-width: 2px; border-style: solid;" />
+  </div>
+  
+  <!-- previous view -->
+  <div class="history">
+    <p class="previous-view">Previous View</p>
+    <ul class="scan-history-list">
+      <li class="scan-history">google</li>
+      <li class="scan-history">google</li>
+      <li class="scan-history">google</li>
+      <li class="scan-history">google</li>
+    </ul>
+  </div>
+  
+  <div class="algorithm">
+    <div class="prediction">
+      <p class="prediction-price">Prediction price:</p>
+    </div>
+
+    <div class="realtime">
+      <p class="realtime-price">Realtime price:</p>
+    </div>
+
+    <div class="suggestion">
+      <p class="suggestion-word">Buy or Sell</p>
+    </div>
+  </div>
+  
+  <footer class="footer">
+    <div class="intro">
+    <p>Software Engineering Web Application</p>
+    <p>Group 3 presents</p>
+    </div>
+  </footer>
+  
+</body>
+</html>

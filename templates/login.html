@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2017 by YifengGuo (http://jsbin.com/hiroqez/14/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>login</title>
+  <style id="jsbin-css">
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    background: #434343;
+    color: #FFF;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-size: 0.9em;
+  }
+
+  .top-header {
+    align-items: center;
+    background: #DF574B;
+    box-shadow: 0 2px 10px #333333;
+    display: flex; /* mobile friendly */
+    height: 60px;
+    position:fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+  }
+
+  .navigator a {
+    color: #F9F9F9;
+    font-weight: 400;
+    margin-left: 20px;
+    text-decoration: none;
+  }
+
+  .login-part {
+    border: 1px solid #ffffff;
+    margin: 200px auto;
+    text-align:center;
+    color: #FBAF41;
+    //width:300px;
+    font-size:30px;
+    //margin-bottom:0;
+  }
+
+  .login-word {
+    padding-top:30px;
+  }
+  .alert{
+    margin: 0px;
+    font-size: 15px;
+    color: #FC0202;
+  }
+  .username {
+    font-size: 20px;
+  }
+
+  .password {
+    font-size: 20px;
+  }
+
+  .submit-btn {
+    color:#FBAF41;
+  }
+
+  .register-btn {
+
+    color:#FBAF41;
+    margin-right:0px;
+    margin-bottom:20px;
+  }
+
+  .intro {
+    margin-top:200px;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+  <header class="top-header">
+
+    <nav class="navigator">
+      <a href="http://127.0.0.1:5000/home" class="main-btn">Home</a>
+      <a href="" class="main-btn">Myprofile</a>
+      <a href="" class="main-btn">News</a>
+      <a href="" class="main-btn">FAQ</a>
+    </nav>
+  </header>
+    <div class="login-part">
+      <p class="login-word">Login</p>
+      <p class="alert" style:color="red">
+          {% if alert %}
+            {{alert}}
+          {% else %}
+            </br>
+          {% endif %}
+      </p>
+      <form action="" method="post" class="search">
+        <p class="username">username
+         <input type="text" name="username"/>
+        </p>
+        <p class="password">password
+         <input type="password" name="password"/>
+        </p>
+        <input type="submit" value="submit" class="submit-btn"/>
+      </form>
+    <form action="http://127.0.0.1:5000/client/register" method="get">
+      <input type="submit" value="register" class="register-btn"/>
+    </form>
+    </div>
+  
+  <footer class="footer">
+    <div class="intro">
+    <p>Software Engineering Web Application</p>
+    <p>Group 3 presents</p>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2017 by YifengGuo (http://jsbin.com/surizof/8/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>register</title>
+  <style id="jsbin-css">
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    background: #434343;
+    color: #FFF;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-size: 0.9em;
+    margin-bottom: 0px; 
+  }
+
+  .top-header {
+    align-items: center;
+    background: #DF574B;
+    box-shadow: 0 2px 10px #333333;
+    display: flex; /* mobile friendly */
+    height: 60px;
+    position:fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;  
+  }
+
+  .navigator a {
+    color: #F9F9F9;
+    font-weight: 400;
+    margin-left: 20px;
+    text-decoration: none;
+  }
+
+  .register-part {
+    line-height:30px;
+    border: 1px solid #ffffff;
+    margin: 200px auto;
+    text-align:center;
+    color: #FBAF41;
+    font-size:20px;
+  }
+
+  .register-word {
+    text-align:center;
+    font-size:30px;
+  }
+
+  .alert{
+    font-size: 15px;
+    color: #FC0202;
+  }
+
+  .username {
+    padding-left:0px;
+  }
+
+  .email {
+    padding-left:31px;
+  }
+
+  .intro {
+    margin-top:100px;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+  <header class="top-header">
+    <nav class="navigator">
+      <a href="http://127.0.0.1:5000/home" class="main-btn">Home</a>
+      <a href="" class="main-btn">Myprofile</a>
+      <a href="" class="main-btn">News</a>
+      <a href="" class="main-btn">FAQ</a>
+    </nav>
+  </header>
+  <!-- register area -->
+  <section class="main-section">
+    <div class="register-part">
+      <p class="register-word">Register</p>
+      <p class="alert" style:color="red">
+          {% if alert %}
+            {{alert}}
+          {% else %}
+            </br>
+          {% endif %}
+      </p>
+      <form action="" method="post" class="register">
+        <p class="username">username
+         <input type="text" name="username"/>
+        </p>
+        <p class="password">password
+         <input type="password" name="password1"/>
+        </p>
+        <p class="password">password
+         <input type="password" name="password2"/>
+        </p>
+        <p  class="email">E-mail
+         <input type="email" name="E-mail"/>
+        </p>
+        <p>
+         <input type="submit" value="submit" class="submit-btn"/>
+        </p>
+      </form>
+    </div>
+  </section>
+  
+  <footer class="footer">
+    <div class="intro">
+    <p>Software Engineering Web Application</p>
+    <p>Group 3 presents</p>
+    </div>
+  </footer>
+
+</body>
+</html>
