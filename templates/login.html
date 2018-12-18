@@ -60,11 +60,6 @@ Released under the MIT license: http://jsbin.mit-license.org
   .login-word {
     padding-top:30px;
   }
-  .alert{
-    margin: 0px;
-    font-size: 15px;
-    color: #FC0202;
-  }
   .username {
     font-size: 20px;
   }
@@ -95,20 +90,13 @@ Released under the MIT license: http://jsbin.mit-license.org
 
     <nav class="navigator">
       <a href="http://127.0.0.1:5000/home" class="main-btn">Home</a>
-      <a href="" class="main-btn">Myprofile</a>
-      <a href="" class="main-btn">News</a>
-      <a href="" class="main-btn">FAQ</a>
+      <a href="http://127.0.0.1:5000/myprofile" class="main-btn">Myprofile</a>
+      <a href="https://finance.yahoo.com/" class="main-btn">News</a>
+      <a href="http://127.0.0.1:5000/FAQ" class="main-btn">FAQ</a>
     </nav>
   </header>
     <div class="login-part">
       <p class="login-word">Login</p>
-      <p class="alert" style:color="red">
-          {% if alert %}
-            {{alert}}
-          {% else %}
-            </br>
-          {% endif %}
-      </p>
       <form action="" method="post" class="search">
         <p class="username">username
          <input type="text" name="username"/>
@@ -122,7 +110,11 @@ Released under the MIT license: http://jsbin.mit-license.org
       <input type="submit" value="register" class="register-btn"/>
     </form>
     </div>
-  
+    {% if alert %}
+  <script type="text/javascript">
+      alert('Invalid Username or Password!')
+  </script>
+  {% endif %}
   <footer class="footer">
     <div class="intro">
     <p>Software Engineering Web Application</p>

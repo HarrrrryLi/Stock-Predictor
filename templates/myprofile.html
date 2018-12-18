@@ -3,19 +3,17 @@
 Created using JS Bin
 http://jsbin.com
 
-Copyright (c) 2017 by YifengGuo (http://jsbin.com/luzewam/27/edit)
+Copyright (c) 2017 by YifengGuo (http://jsbin.com/soquwoz/26/edit)
 
 Released under the MIT license: http://jsbin.mit-license.org
 -->
-
 <meta name="robots" content="noindex">
 <html>
 <head>
-
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-  <title>{{ title }}</title>
+  <title>homepage</title>
 <style id="jsbin-css">
 * {
   margin: 0;
@@ -24,17 +22,16 @@ Released under the MIT license: http://jsbin.mit-license.org
 }
 
 body {
-  background: #ECF0F1;
+  background: #434343;
   color: #FFF;
-  font-family: 'Helvetica', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 300;
   font-size: 0.9em;
 }
 
-
 .top-header {
   align-items: center;
-  background: #2980B9;
+  background: #DF574B;
   box-shadow: 0 2px 10px #333333;
   display: flex; /* mobile friendly */
   height: 60px;
@@ -52,66 +49,17 @@ body {
   text-decoration: none;
 }
 
-.time-range {
-  line-height:30px;
-  margin-top: 100px;
-  width:500px;
-  //text-align:left;
-  //padding-left:10px;
-  color: #FBAF41;
-  font-size:15px;
+.navigator a:hover {
+  color:#18adf2;
 }
-
-.stock-name {
-  //width:300px;
-  float: left;
-  margin-left:60px;
-}
-
 .select-bar {
-  border: solid 1px #000;
+  margin-top:50px;
+  //border: solid 1px #000;
   width:130px;
   margin-left:15px;
   margin-right:20px;
   color: #2980B9
 }
-
-.option {
-  
-}
-
-.fav-link {
-  color:#FFFFFF;
-}
-
-.fav-link:hover {
-  color:red;
-}
-
-.search-bar {
-  margin-top:-22px;
-  text-align:right;
-  margin-right:20px;
-}
-
-.search-icon {
-  margin-right:80px;
-  margin-top:-18px;
-  float:right;
-  color:#ffffff;
-  cursor:pointer;
-}
-
-.search-icon:hover {
-  color:#0ea6f2;
-}
-
-.search-field {
-  margin-right:80px;
-  color:#0ea6f2;
-}
-
-
 .stock-chart {
   margin-top:30px;
   margin-left:60px;
@@ -120,121 +68,150 @@ body {
   border:solid 1px;
 }
 
-
-
-.history {
-  margin-right:80px;
-}
-
-.feedControl {
+.user-info {
   float:right;
-  margin-top:-375px;
-  margin-right:36px;
-  width:350px;
-  height:auto;
-  border:solid 1px #2980B9;
-  color: #E74C3C;
-  font-weight:bold;
-}
-
-.scan-history-list {
-  border:solid 1px #FFFFFF;
-  background: #f4edee;
-  list-style:none;
-  float:right;
-  text-align:center;
-  margin-top:-350px;
+  margin-top:70px;
   margin-right:20px;
-  width:140px;
-  color:#0c58f2;
-  font-weight:bold;
 }
 
-.algorithm {
-  margin-top:30px;
-  margin-left:60px;
-  color: #2980B9;
-  font-family: 'Helvetica', sans-serif;
-  font-size:1.2em;
-  line-height:1.8;
+.username {
+  color: #FBAF41;
+}
+
+.logout {
+  color:#ffffff;
+}
+
+.logout:hover {
+  color:#19ade8;
+}
+
+.stock-select {
+  margin-top:70px;
+  float:left;
+}
+
+
+.fav-area {
+  padding-top:120px;
+}
+
+.fav-list {
+  list-style:none;
+  text-align:center;
+  border:1px solid #FFFFFF;
+  width:90%;
+  align-items:center;
+  margin-left:40px;
+  margin-right:10px;
+}
+
+.fav-list li {
+  border-bottom:solid 1px;
+}
+
+.functions-area {
+  padding-top:40px;
+}
+
+.functions-title {
+  color:#ea8383;
   font-weight:bold;
+  font-size:1.4em;
+}
+
+.functions a{
+  line-height:25px;
+  color:#38c470;
+  list-style:none;
+  margin-left:20px;
+  text-decoration:none;
+  font-size:17px;
+}
+
+.functions a:hover {
+  color:#ef8c4f;
 }
 
 .footer {
   margin-top:100px;
   text-align: center;
   margin-bottom:10px;
-  color: #2980B9;
-  font-family: 'Helvetica', sans-serif;
-  font-size:0.8em;
-  line-height:1.8;
-  font-weight:bold;
 }
-
 </style>
-
-
 </head>
 <body>
   
   <header class="top-header">
-    <nav class="navigator">
+      <nav class="navigator">
       <a href="http://127.0.0.1:5000/home" class="main-btn">Home</a>
       <a href="http://127.0.0.1:5000/myprofile" class="main-btn">Myprofile</a>
       <a href="https://finance.yahoo.com/" class="main-btn">News</a>
       <a href="http://127.0.0.1:5000/FAQ" class="main-btn">FAQ</a>
     </nav>
   </header>
-  
-  <div class="time-range">
-    <p class="stock-name"> 
-        <form id="form1">
-          <input name="stock" id="stock" type="hidden" value="{{ stock }}">{{ stock }}
-          <input type="button" value="add focus" onclick="addFav()"/>
-          <input type="button" value="cancel focus" onclick="deFav()"/>
-        </form>
-        
-        <select id="trend-type-selection" class="select-bar">
-        {% for data_type in data_types %}
-        <option value="{{ data_type }}" >{{ data_type }}</option>
-        {% endfor %}
-        </select>   
-    </p>
+
+  <div class="user-info">
+    <form action="" method="post">
+      <p class="username">Username
+        <a href="http://127.0.0.1:5000/logout" class="logout">
+          <i class="fa fa-sign-out" aria-hidden="true"></i>
+        </a>
+      </p>
+    </form>
   </div>
+
+  <div class="focused-stock">
+    <p class="focused-stock-name">Focused Stock:{{stock}}</p>
+  </div>
+   {% if stock %}
+<div class="select-bar">
+
   
-  <!-- stock trend chart -->
+  <select id="trend-type-selection" class="select-bar">
+  {% for data_type in data_types %}
+  <option value="{{ data_type }}" >{{ data_type }}</option>
+  {% endfor %}
+  </select>
+
+  </div>
+ 
   <div id="stock-trend-chart" class="stock-chart">
 
   </div>
-
-  
-<div class="feedControl">
-  <p> News Related to {{chart_title}}</p>
-  <script src="{{ rss_url }}"></script>
-
-</div> 
-<!-- end sw-rss-feed code -->
-{% if display=='true' %}
-<div class="algorithm">
-      <p class="realtime-price"> Real Time Quote: {{ rt_price }} </p>    
-      <p class="prediction-price">Short-Term Predicted price: {{ pred_price }}</p>
-      <p class="suggestion-word">Short-Term Recommendation: {{ rec_BS }} </p>
-      <p class="suggestion-word">Long-Term Predicted price: {{ pred_price1 }} </p>
-      <p class="suggestion-word">Long-Term Recommendation: {{ rec_BS1 }} </p>
-      <p class="bayesian-prediction">Bayesian Prediction Price: {{pred_Bayesian}}</p>
-      <p class="SVM-prediction">SVM Prediction Price: {{pred_SVM}}</p>
+  {% endif %}
+  <div class="functions-area">
+    <ul class="functions">
+      <li>
+        <p class="functions-title">News & Investment Education</p>
+      </li>
+      <li>
+        <a href="https://www.yahoo.com/news/">Yahoo Finance News</a>
+      </li>
+      <li>
+        <a href="https://finance.yahoo.com/investing-news/">Market News</a>
+      </li>
+      <li>
+        <a href="https://www.stocktrader.com/free-education/">Free stock Market Education</a>
+      </li>
+      <li>
+        <a href="https://www.stocktrader.com/learn-stock-trading/">How To Learn Stock Trading As a new Investor</a>
+      </li>
+    </ul>
   </div>
-{% else %}
-    <br><br><br><br><br>
-{% endif %}  
-  
   
   <footer class="footer">
     <div class="intro">
-    <p>Software Engineering Web Application</p>
-    <p>Group 3</p>
+    <p>Software Engineering Web Application</p></br>
+    <p>Group 3 presents</p>
     </div>
   </footer>
+
+  <script type="application/javascript">
+  function logout() {
+      window.location.href = "http://127.0.0.1:5000/logout";
+  }
+  </script>
   
 </body>
 <script src="http://code.jquery.com/jquery-1.7.js"></script>
@@ -246,6 +223,7 @@ body {
 <script type="text/javascript">
     window.jq170=$.noConflict();
 </script>
+{% if stock %}
 <script>
 
 
@@ -253,7 +231,7 @@ body {
       Highcharts.theme = {
          colors: ['#2b908f', '#90ee7e', '#f45b5b', '#7798BF', '#aaeeee', '#ff0066', '#eeaaee',
             '#55BF3B', '#DF5353', '#7798BF', '#aaeeee'],
-         chart: { 
+         chart: {
             backgroundColor: {
                linearGradient: { x1: 0, y1: 0, x2: 1, y2: 1 },
                stops: [
@@ -464,7 +442,7 @@ body {
             // chart.xAxis[0].setExtremes(0, 11);
         }(jq170));
       };
-      
+
       var value_selection = {{ data_types|safe }}[0];
       var stock_symb = {{ stock_symb|safe }}[0];
 
@@ -510,7 +488,7 @@ body {
           }, {
                 name: value_selection + " Moving Average ( {{ window }})",
                 data: {{ chart_data_all_sec|tojson|safe }}[value_selection],
-                visible: false              
+                visible: false
           },{
 
               name: value_selection + " Moving Average ( {{ window2 }})",
@@ -532,7 +510,7 @@ body {
                day: '%d %b %Y'    //ex- 01 Jan 2016
             }
           }
-       
+
       }
       load_highchart(stockTrendChart);
       $('#trend-type-selection').on('change', function() {
@@ -598,55 +576,6 @@ body {
 
       });
     })
-      $('#stock-selection').on('change', function() {
-        $.post("demo_test.asp", function(data, status){
-        alert("Data: " + data + "\nStatus: " + status);
-        });
-
-      })
-    
-      function addFav() {
-        var stock = $('#stock').val();
-        //alert(qry);
-
-        var ajax = $.ajax({
-            type: "POST",
-            url: "http://127.0.0.1:5000/addfav",
-            data: $('#form1').serialize(),
-            //dataType: "json",
-            //contentType: "application/json; charset=UTF-8"
-        }).done(function (data) {
-            alert("Add focus success");
-        });
-        ajax.fail(function (data) {
-            alert("Add focus fail");
-        });
-
-    }
-
-    function deFav() {
-        var stock = $('#stock').val();
-        //alert(qry);
-
-        var ajax = $.ajax({
-            type: "POST",
-            url: "http://127.0.0.1:5000/defav",
-            data: $('#form1').serialize(),
-            //dataType: "json",
-            //contentType: "application/json; charset=UTF-8"
-        }).done(function (data) {
-            alert("Cancel focus success");
-        });
-        ajax.fail(function (data) {
-            alert("Cancel focus fail");
-        });
-
-    }
-</script>
-<script type="text/javascript">
-
-google.load("feeds", "1");
-google.setOnLoadCallback(load);
-</script>
-
+        </script>
+        {% endif %}
 </html>

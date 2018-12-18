@@ -37,7 +37,7 @@ Released under the MIT license: http://jsbin.mit-license.org
     position:fixed;
     top: 0;
     width: 100%;
-    z-index: 1;  
+    z-index: 1;
   }
 
   .navigator a {
@@ -82,7 +82,7 @@ Released under the MIT license: http://jsbin.mit-license.org
     //align-items:center;
     top: 22px;
     position:absolute;
-    margin-right: 60px;  
+    margin-right: 60px;
   }
 
   .title {
@@ -115,25 +115,7 @@ Released under the MIT license: http://jsbin.mit-license.org
   }
 
 </style>
-{% if change %}
-  <style id="jsbin-css">
-  .logout{
-    display: inline;
-    //align-items:center;
-    top: 22px;
-    position:absolute;
-    margin-right: 60px;
-  }
 
-  .login {
-    display: none;
-    //align-items:center;
-    top: 22px;
-    position:absolute;
-    margin-right: 60px;
-  }
-  </style>
-{% endif %}
 </head>
 <body>
   <header class="top-header">
@@ -142,8 +124,7 @@ Released under the MIT license: http://jsbin.mit-license.org
       <a href="http://127.0.0.1:5000/home" class="main-btn">Home</a>
       <a href="http://127.0.0.1:5000/myprofile" class="main-btn">Myprofile</a>
       <a href="https://finance.yahoo.com/" class="main-btn">News</a>
-      <a href="http://127.0.0.1:5000/FAQ" class="main-btn">FAQ</a>
-      <a href="http://127.0.0.1:5000/query" class="main-btn">Query</a>
+      <a href="" class="main-btn">FAQ</a>
     </nav>
 
     <div class="right-bar">
@@ -152,25 +133,9 @@ Released under the MIT license: http://jsbin.mit-license.org
       <a href="http://127.0.0.1:5000/client/register" class="register">Register</a>
     </div>
   </header>
-  
-  <div>
-    <p class="title">Search the Stock</p>
-  </div>
-  
-  <form action="" method="post" class="search">
-    <div>
-      <input name="stock" type="text" class="search-field"/>
-    </div><!--Search Bar-->
-    <div>
-      <input name="" value="Search" type="submit" class="search-btn"/>
-    </div><!--Search Button-->
-  </form>
-   {% if alert %}
-  <script type="text/javascript">
-      alert('Stock is not Found!')
-  </script>
-  {% endif %}
-  
+
+  <link rel="import" href="http://www.google.com/">
+
   <footer class="footer">
     <div class="intro">
     <p>Software Engineering Web Application</p></br>

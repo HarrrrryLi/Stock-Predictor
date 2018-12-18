@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2017 by YunfanXu (http://jsbin.com/lotopo/2/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2017 by YifengGuo (http://jsbin.com/xixoro/5/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>FAQs</title>
+<style id="jsbin-css">
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #434343;
+  color: #FFF;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: 0.9em;
+}
+
+.top-header {
+  align-items: center;
+  background: #DF574B;
+  box-shadow: 0 2px 10px #333333;
+  display: flex; /* mobile friendly */
+  height: 60px;
+  position:fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  
+}
+.navigator a {
+  color: #F9F9F9;
+  font-weight: 400;
+  margin-left: 20px;
+  text-decoration: none;
+}
+
+.right-bar {
+  color: #F9F9F9;
+  font-weight: 400;
+  margin-left: 180px;
+  text-decoration: none;
+}
+
+.right-bar .login,.register {
+  color: #F9F9F9;
+  text-decoration: none;
+  right:0;
+  margin-left: 10px;
+  width:80px;
+  height:20px;
+}
+.register {
+  //align-items:center;
+  //float:right;
+  position:absolute;
+  margin-right:0;
+  top:22px;
+}
+
+.login {
+  //align-items:center;
+  top: 22px;
+  position:absolute;
+  margin-right: 50px;
+  
+}
+
+.title {
+  margin: 80px auto;
+  text-align:center;
+  color: #FBAF41;
+  width:300px;
+  font-size:2em;
+  margin-bottom:0;
+}
+  .introduction {
+  margin: 10px auto;
+  text-align:center;
+  width:600px;
+  margin-bottom:0;
+}
+.content {
+  margin: 5px auto;
+  margin-left: 250px;
+  width:800px;
+  margin-bottom:1;
+}
+.QA {
+  color:#FBAF41;
+  margin: 5px auto;
+  margin-left: 250px;
+  width:800px;
+  margin-bottom:1;
+}
+  
+.search {
+  text-align:center;
+  color: #000000;
+  font-size:2em;
+}
+
+.search-field {
+  width:300px;
+  height: 30px;
+}
+
+.search-btn {
+  width:60px;
+}
+
+.intro {
+  margin-top:200px;
+  text-align: center;
+}
+
+
+</style>
+</head>
+<body>
+  <header class="top-header">
+
+    <nav class="navigator">
+      <a href="http://127.0.0.1:5000/home" class="main-btn">Home</a>
+      <a href="http://127.0.0.1:5000/myprofile" class="main-btn">Myprofile</a>
+      <a href="https://finance.yahoo.com/" class="main-btn">News</a>
+      <a href="http://127.0.0.1:5000/FAQ" class="main-btn">FAQ</a>
+    </nav>
+
+    <div class="right-bar">
+      <a href="" class="login">Login</a>
+      <a href="" class="register">Register</a>
+    </div>
+  </header>
+  
+  <div>
+    <p class="title">FAQs</p>
+  </div>
+  <h3 class="introduction">
+     Welcome to our webpage, 
+    where you can find the latest
+    informantion about the stock.
+    </br></br>
+    </h3>
+    
+  <p class="QA">
+    <strong> Q:</strong>
+    </p>
+  <p class="content">Why I cannot forecast the stock price or search the stock informantion?</p>
+    <p class="QA" >
+     <strong> A:</strong>
+    </p>
+  <p class="content">You should login into the system first, then you can use the function in our website.</p>
+
+
+  <p class="QA" >
+     <strong> Q:</strong>
+    </p>
+  <p class="content">How you guys predict the stock price?</p>
+    <p class="QA" >
+     <strong> A:</strong>
+    </p>
+  <p class="content">We use the ANN(artifical neural networks) and Carve Fitting to calcuate the prediction price of the stock.</p>
+  
+  <p class="QA" >
+    <strong> Q:</strong>
+    </p>
+  <p class="content">What's the meaning of the sell and buy in the main page?</p>
+    <p class="QA" >
+     <strong> A:</strong>
+      <p class="content">It is the suggestion from our system. This result is based on different mathmatical models.</p>
+  
+</p>
+  <p></p>
+    
+  
+    
+   
+  </form>
+  
+  <footer class="footer">
+    <div class="intro">
+    <p>Software Engineering Web Application</p></br>
+    <p>Group 3 presents</p>
+    </div>
+  </footer>
+</body>
+</html>

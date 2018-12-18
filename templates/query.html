@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2017 by YifengGuo (http://jsbin.com/wayifa/8/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Query</title>
+<style id="jsbin-css">
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #434343;
+  color: #FFF;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: 0.9em;
+}
+
+.top-header {
+  align-items: center;
+  background: #DF574B;
+  box-shadow: 0 2px 10px #333333;
+  display: flex; /* mobile friendly */
+  height: 60px;
+  position:fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;  
+}
+
+.navigator a {
+  color: #F9F9F9;
+  font-weight: 400;
+  margin-left: 20px;
+  text-decoration: none;
+}
+
+.realtime
+{
+  line-height: 40px;
+  margin-top: 100px;
+  margin-left: 30px;
+  text-align: left;
+  font-size: 1.5em;
+  color: #FFF;
+}
+.list
+{
+  list-style-type: none;
+}
+
+
+.realtime_string {
+  color:red;
+  font-weight: bold;
+  font-size: 2em;
+}
+
+.query-area {
+  display:inline;
+  position: top;
+  margin-top:10px;
+  margin-left:0px;
+  font-size: 1em;
+}
+
+.intro {
+  margin-top:250px;
+  text-align: center;
+}
+
+.login {
+  display: none;
+  //align-items:center;
+  top: 22px;
+  position:absolute;
+  margin-right: 60px;
+}
+</style>
+</head>
+<body>
+  <header class="top-header">
+
+    <nav class="navigator">
+      <a href="http://127.0.0.1:5000/home" class="main-btn">Home</a>
+      <a href="http://127.0.0.1:5000/myprofile" class="main-btn">Myprofile</a>
+      <a href="https://finance.yahoo.com/" class="main-btn">News</a>
+      <a href="http://127.0.0.1:5000/FAQ" class="main-btn">FAQ</a>
+    </nav>
+  </header>
+
+  <div class="realtime">
+    <div class="query-area">
+      <select id="choosen" onChange="top.location.href=this.options[this.selectedIndex].value;" >
+        <option>Please choose a stock</option>
+        {% if stock=="AAPL" %}
+          <option value="http://127.0.0.1:5000/query?sym=AAPL" selected>AAPL</option>
+        {% else %}
+          <option value="http://127.0.0.1:5000/query?sym=AAPL">AAPL</option>
+        {% endif %}
+        {% if stock=="GOOGL" %}
+          <option value="http://127.0.0.1:5000/query?sym=GOOGL" selected>GOOGL</option>
+        {% else %}
+          <option value="http://127.0.0.1:5000/query?sym=GOOGL">GOOGL</option>
+        {% endif %}
+        {% if stock=="NVDA" %}
+          <option value="http://127.0.0.1:5000/query?sym=NVDA" selected>NVDA</option>
+        {% else %}
+          <option value="http://127.0.0.1:5000/query?sym=NVDA">NVDA</option>
+        {% endif %}
+        {% if stock=="YHOO" %}
+          <option value="http://127.0.0.1:5000/query?sym=YHOO" selected>YHOO</option>
+        {% else %}
+          <option value="http://127.0.0.1:5000/query?sym=YHOO">YHOO</option>
+        {% endif %}
+        {% if stock=="AMZN" %}
+          <option value="http://127.0.0.1:5000/query?sym=AMZN" selected>AMZN</option>
+        {% else %}
+          <option value="http://127.0.0.1:5000/query?sym=AMZN">AMZN</option>
+        {% endif %}
+        {% if stock=="MSFT" %}
+          <option value="http://127.0.0.1:5000/query?sym=MSFT" selected>MSFT</option>
+        {% else %}
+          <option value="http://127.0.0.1:5000/query?sym=MSFT">MSFT</option>
+        {% endif %}
+        {% if stock=="BAC" %}
+          <option value="http://127.0.0.1:5000/query?sym=BAC" selected>BAC</option>
+        {% else %}
+          <option value="http://127.0.0.1:5000/query?sym=BAC">BAC</option>
+        {% endif %}
+        {% if stock=="NKE" %}
+          <option value="http://127.0.0.1:5000/query?sym=NKE" selected>NKE</option>
+        {% else %}
+          <option value="http://127.0.0.1:5000/query?sym=NKE">NKE</option>
+        {% endif %}
+        {% if stock=="NFLX" %}
+          <option value="http://127.0.0.1:5000/query?sym=NFLX" selected>NFLX</option>
+        {% else %}
+          <option value="http://127.0.0.1:5000/query?sym=NFLX">NFLX</option>
+        {% endif %}
+        {% if stock=="FB" %}
+          <option value="http://127.0.0.1:5000/query?sym=FB" selected>FB</option>
+        {% else %}
+          <option value="http://127.0.0.1:5000/query?sym=FB">FB</option>
+        {% endif %}
+      </select>
+      <br>
+      {% if stock %}
+        Highest Price in Last Ten Days: {{ hp }} <br>
+        Average Price in Last One Year: {{ ap }} <br>
+        Lowest Price in Last One Year:  {{ lp }} <br>
+        The Stock Symbol which avgerage is lower than the lowest price of current stock: {{ symbol }}
+      {% endif %}
+    </div>
+  <p class="realtime_string"> Real Time Price </p>
+  <ul class="list">
+   <li> {{ rt0 }} &nbsp;&nbsp; {{ rt1 }} &nbsp;&nbsp; {{ rt2 }} </li>
+   <li> {{ rt3 }} &nbsp;&nbsp; {{ rt4 }} &nbsp;&nbsp; {{ rt5 }} </li> 
+   <li> {{ rt6 }} &nbsp;&nbsp; {{ rt7 }} &nbsp;&nbsp; {{ rt8 }} &nbsp;&nbsp; {{ rt9 }} </li>
+  </ul>
+  </div>
+  
+  <footer class="footer">
+    <div class="intro">
+    <p>Software Engineering Web Application</p></br>
+    <p>Group 3 presents</p>
+    </div>
+  </footer>
+</body>
+</html>

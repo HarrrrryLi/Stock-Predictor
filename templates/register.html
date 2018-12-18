@@ -26,7 +26,7 @@ Released under the MIT license: http://jsbin.mit-license.org
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
     font-size: 0.9em;
-    margin-bottom: 0px; 
+    margin-bottom: 0px;
   }
 
   .top-header {
@@ -38,7 +38,7 @@ Released under the MIT license: http://jsbin.mit-license.org
     position:fixed;
     top: 0;
     width: 100%;
-    z-index: 1;  
+    z-index: 1;
   }
 
   .navigator a {
@@ -85,42 +85,54 @@ Released under the MIT license: http://jsbin.mit-license.org
   <header class="top-header">
     <nav class="navigator">
       <a href="http://127.0.0.1:5000/home" class="main-btn">Home</a>
-      <a href="" class="main-btn">Myprofile</a>
-      <a href="" class="main-btn">News</a>
-      <a href="" class="main-btn">FAQ</a>
+      <a href="http://127.0.0.1:5000/myprofile" class="main-btn">Myprofile</a>
+      <a href="https://finance.yahoo.com/" class="main-btn">News</a>
+      <a href="http://127.0.0.1:5000/FAQ" class="main-btn">FAQ</a>
     </nav>
   </header>
   <!-- register area -->
   <section class="main-section">
     <div class="register-part">
-      <p class="register-word">Register</p>
+      <p class="register-word">Register</p >
       <p class="alert" style:color="red">
           {% if alert %}
             {{alert}}
           {% else %}
             </br>
           {% endif %}
-      </p>
+      </p >
       <form action="" method="post" class="register">
         <p class="username">username
-         <input type="text" name="username"/>
-        </p>
-        <p class="password">password
-         <input type="password" name="password1"/>
-        </p>
-        <p class="password">password
-         <input type="password" name="password2"/>
-        </p>
+         <input type="text" name="username" placeholder="please input username"/>
+        </p >
+        <p class="password1">password
+         <input type="password" name="password1" placeholder="please enter password"/>
+        </p >
+        <p class="password2">password
+         <input type="password" name="password2" class="password2-content" placeholder="please re-enter password"/>
+        </p >
         <p  class="email">E-mail
-         <input type="email" name="E-mail"/>
-        </p>
+         <input type="email" name="E-mail" placeholder="please input your E-mail"/>
+        </p >
         <p>
          <input type="submit" value="submit" class="submit-btn"/>
-        </p>
+        </p >
       </form>
     </div>
   </section>
-  
+    {% if alert=='Passwords are Differents!' %}
+  <script type="text/javascript">
+    alert('Passwords are Differents!')
+  </script>
+  {% elif alert=='The Email has already been Registered!' %}
+  <script type="text/javascript">
+    alert('The Email has already been Registered!')
+  </script>
+  {% elif alert=='The Username has already been Used!' %}
+  <script type="text/javascript">
+    alert('The Username has already been Used!')
+  </script>
+  {% endif %}
   <footer class="footer">
     <div class="intro">
     <p>Software Engineering Web Application</p>
